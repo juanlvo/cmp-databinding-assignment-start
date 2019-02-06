@@ -6,14 +6,15 @@ import { Component, ViewChild, ElementRef, SimpleChanges } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('countNumber') count: ElementRef;
-  
-  onRunningGame(firedNumber: number) {
-    console.log(firedNumber);
-  }
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('in app controler the count is: '+this.count);
-   }
+  onRunningGame(firedNumber: number) {
+    if (firedNumber % 2 === 0) {
+      this.evenNumbers.push(firedNumber);
+    } else {
+      this.oddNumbers.push(firedNumber);
+    }
+  }
 
 }
