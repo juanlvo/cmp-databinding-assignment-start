@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
+  onRunningGame(i: number) {
+    console.log('The count is: '+i);
+  }
+
 }
