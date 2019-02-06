@@ -17,11 +17,10 @@ export class GameControlComponent implements OnInit {
 
   startTheGame() {
     this.theInterval = setInterval(() => {
-      this.runningGame.emit({ i: this.count});
+      this.runningGame.emit({ i: this.count++});
       //console.log(this.count);
-      this.count++;
     },
-    this.count);
+    1000);
   }
 
   stopTheGame() {

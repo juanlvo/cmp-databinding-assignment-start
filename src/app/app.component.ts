@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('countNumber') count: ElementRef;
   
-  onRunningGame(i: number) {
-    console.log('The count is: '+i);
+  onRunningGame(firedNumber: number) {
+    console.log(firedNumber);
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('in app controler the count is: '+this.count);
+   }
 
 }

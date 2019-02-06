@@ -16,6 +16,10 @@
   </div>
 </div>
 <hr>
-<app-game-control></app-game-control>
+<div class="row">
+  <div class="col-xs-12">
+    <app-game-control (runningGame)="onRunningGame()"></app-game-control>
+  </div>
+</div>
 <app-odd></app-odd>
 <app-even></app-even>
